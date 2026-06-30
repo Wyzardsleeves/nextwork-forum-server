@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "rootDir": ".",
+    "outDir": "dist",
+    "strict": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+    "lib": ["ES2022"],
+    "ignoreDeprecations": "6.0" // Ignore deprecation warnings for Node.js v18 and above
+  },
+  "include": ["routes/**/*.ts", "models/**/*.ts"]
+}

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const Topics = () => {
+const TopicList = () => {
   const [topics, setTopics] = useState<string[]>([]);
 
   useEffect(() => {
@@ -27,4 +27,4 @@ const Topics = () => {
   );
 };
 
-export default Topics;
+export default TopicList;

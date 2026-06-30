@@ -1,47 +1,37 @@
 # AI Agent Instructions
 
 ## Purpose
-This repository contains a minimal full-stack example: an Express backend in the repo root and a Vite-powered React frontend under `client/`.
+This repository is a small full-stack forum app with an Express backend at the repository root and a Vite + React frontend in client/.
 
-## Key files
-- `package.json` — root project scripts and backend dependencies
-- `index.js` — Express backend entrypoint
-- `client/package.json` — frontend scripts and dependencies
-- `client/src/` — React + TypeScript application code
-- `client/vite.config.ts` — frontend build/dev configuration
-- `README.md` — project notes and setup guidance
-- `client/README.md` — client template notes
+## Quick start
+- Install dependencies with npm install from the repo root.
+- Start the backend with npm run server.
+- Start the frontend with npm run client.
+- Start both together with npm run dev.
 
-## How to run
-- `npm install` — install root dependencies
-- `npm run dev` — run backend and frontend concurrently from the repository root
-- `npm run server` — run only the Express backend
-- `npm run client` — run only the Vite frontend
-- `npm run dev --prefix client` — alternate way to start the frontend from root
+## Project layout
+- package.json: root scripts and backend dependencies.
+- index.js: Express entrypoint for the server.
+- routes/, models/: server-side API and data model files.
+- client/: Vite React frontend source and config.
+- client/src/Components/: frontend UI components.
+- client/src/Components/auth/: authentication-related components.
+- README.md: project notes and overview.
 
-## Frontend details
-- React 19 with TypeScript
-- Vite dev server
-- `client/src/` is the main application source
-- ESLint and Vite are configured in the client
+## Conventions
+- Keep changes minimal and aligned with the existing Express + React/Vite structure.
+- The root package uses ES modules via "type": "module".
+- Prefer existing npm scripts over introducing new tooling.
+- Avoid assuming a monorepo setup, Turborepo, or pnpm is configured.
+- If you add scripts or config, make sure npm run dev still starts both the backend and frontend.
+- When editing server route files, preserve the current Express style and keep handlers simple and explicit.
+- For the client, use the existing Vite + React setup and the installed Tailwind integration when adding styling.
 
-## Backend details
-- Express 5 backend running from `index.js`
-- Uses `cors` and `express.json()`
-- Serves an API on port `5000`
+## Common pitfalls
+- The client uses React Router, so route syntax should follow the current version in use.
+- Component imports must match the actual filenames in client/src/Components/.
+- Do not introduce new build tooling unless the existing scripts need it.
 
-## Conventions and assumptions
-- The backend lives in the repository root, not under `client/`
-- The frontend lives in `client/`
-- The root package uses `type: "module"`
-- There are currently no test commands configured in the repo
-- Prefer npm for scripts since root `package.json` defines npm commands
-
-## Useful docs
-- Root README: `README.md`
-- Frontend template notes: `client/README.md`
-
-## Notes for AI agents
-- Keep changes minimal and align with the current Express + React/Vite setup
-- Do not assume a monorepo tool like Turborepo or pnpm is configured
-- If you add scripts or config, ensure the root `dev` script still starts both the backend and `client` frontend
+## Notes for agents
+- There is no dedicated test command configured in the repo yet.
+- Use the existing README and client/README.md for broader context before making structural changes.
