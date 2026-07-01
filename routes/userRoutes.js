@@ -1,4 +1,4 @@
-import express, { type Request, type Response } from "express";
+import express from "express";
 
 const app = express();
 
@@ -7,8 +7,8 @@ app.get("/test_user", (req, res) => {
 });
 
 // Check if user is logged in
-app.get("/api/user", (req: Request, res: Response) => {
-  const { idToken } = req.headers as { idToken?: string };
+app.get("/api/user", (req, res) => {
+  const { idToken } = req.headers;
 
   if (!idToken) {
     return res.status(401).json({ message: "Unauthorized: No ID token provided" });
@@ -20,8 +20,8 @@ app.get("/api/user", (req: Request, res: Response) => {
 });
 
 // Register a new user
-app.post("/api/user/register", (req: Request, res: Response) => {
-  const { email, password } = req.body as { email?: string; password?: string };
+app.post("/api/user/register", (req, res) => {
+  const { email, password } = req.body;
 
   if (!email || !password) {
     return res.status(400).json({ message: "Bad Request: Email and password are required" });
@@ -33,8 +33,8 @@ app.post("/api/user/register", (req: Request, res: Response) => {
 });
 
 // Login a user
-app.post("/api/user/login", (req: Request, res: Response) => {
-  const { email, password } = req.body as { email?: string; password?: string };
+app.post("/api/user/login", (req, res) => {
+  const { email, password } = req.body;
 
   if (!email || !password) {
     return res.status(400).json({ message: "Bad Request: Email and password are required" });
@@ -46,8 +46,8 @@ app.post("/api/user/login", (req: Request, res: Response) => {
 });
 
 // Logout a user
-app.post("/api/user/logout", (req: Request, res: Response) => {
-  const { idToken } = req.headers as { idToken?: string };
+app.post("/api/user/logout", (req, res) => {
+  const { idToken } = req.headers;
 
   if (!idToken) {
     return res.status(401).json({ message: "Unauthorized: No ID token provided" });

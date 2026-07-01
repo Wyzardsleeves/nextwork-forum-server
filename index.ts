@@ -1,5 +1,6 @@
 import express from "express";
 import cors from "cors";
+import userRoutes from "./routes/userRoutes";
 
 // Load environment variables from .env file
 import dotenv from "dotenv";
@@ -10,6 +11,9 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
+
+// Use user routes
+app.use(userRoutes);
 
 app.get("/api", (req, res) => {
   res.json({ message: "Hello from Express backend!" });

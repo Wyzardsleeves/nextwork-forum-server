@@ -2,10 +2,10 @@
   "name": "nextwork-forum-server",
   "version": "1.0.0",
   "type": "module",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "nodemon index.js",
+    "server": "nodemon --exec tsx index.ts",
     "client": "yarn --cwd client dev",
     "dev": "concurrently \"yarn server\" \"yarn client\""
   },
@@ -20,9 +20,12 @@
     "express": "^5.2.1"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.19",
     "@types/express": "^5.0.6",
     "@types/node": "^26.0.1",
     "nodemon": "^3.1.14",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.22.4",
     "typescript": "^6.0.3"
   }
 }

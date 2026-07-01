@@ -24,7 +24,7 @@ import DeletePost from './Components/DeletePost'
 const VITE_SERVER_URL = import.meta.env.VITE_SERVER_URL
 
 const App: React.FC = () => {
-  const [authorized, setAuthorized] = useState<boolean>(false);
+  const [authorized, setAuthorized] = useState<boolean>(true);
 
   useEffect(() => {
     // Simulate an API call to check if the user is authorized
@@ -37,7 +37,7 @@ const App: React.FC = () => {
 
     checkAuthorization();
   }, []);
-  
+
   useEffect(() => {
     fetch(`${VITE_SERVER_URL}/api/topics`)
       .then((res) => res.json())

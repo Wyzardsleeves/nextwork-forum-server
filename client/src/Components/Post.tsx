@@ -1,6 +1,9 @@
 import Votes from "./Votes";
+interface PostProps {
+  content: string;
+};
 
-const Post = ({ title, content }) => {
+const Post = ({ content }: PostProps) => {
   return (
     <div>
       <section id="user-info">
@@ -10,8 +13,7 @@ const Post = ({ title, content }) => {
       </section>
       <section id="post-content">
         <div  className="bg-white p-4 shadow-md">
-          <h2 className="text-xl font-bold mb-2">{post.title}</h2>
-          <p className="text-gray-600">{post.content}</p>
+          <p className="text-gray-600">{content}</p>
         </div>
         <Votes />
         {/* Signature */}

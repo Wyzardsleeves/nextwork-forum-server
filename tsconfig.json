@@ -12,5 +12,5 @@
     "lib": ["ES2022"],
     "ignoreDeprecations": "6.0" // Ignore deprecation warnings for Node.js v18 and above
   },
-  "include": ["routes/**/*.ts", "models/**/*.ts"]
+  "include": ["index.ts", "routes/**/*.ts", "models/**/*.ts"]
 }

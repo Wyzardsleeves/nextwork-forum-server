@@ -25,6 +25,7 @@ npm install
 ### What else I would do
 
 - Set up roles.
+- Set up a Captcha so that robots can't post spam
 - Allow users to
   - Edit their avatar
   - Add a bio
